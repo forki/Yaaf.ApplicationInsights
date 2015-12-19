@@ -63,7 +63,7 @@ let buildConfig =
     RestrictReleaseToWindows = false
     DisableMSTest = true
     BuildTargets =
-     [ { BuildParams.WithSolution with
+     [ (*{ BuildParams.WithSolution with
           // The default build
           PlatformName = "Net40"
           SimpleBuildName = "net40" }
@@ -73,7 +73,7 @@ let buildConfig =
           SimpleBuildName = "profile111"
           FindUnitTestDlls =
             // Don't run on mono.
-            if isMono then (fun _ -> Seq.empty) else BuildParams.Empty.FindUnitTestDlls }
+            if isMono then (fun _ -> Seq.empty) else BuildParams.Empty.FindUnitTestDlls }*)
        { BuildParams.WithSolution with
           // The generated templates
           PlatformName = "Net45"
