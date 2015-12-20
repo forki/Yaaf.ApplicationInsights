@@ -43,13 +43,34 @@ let buildConfig =
     PageAuthor = "Matthias Dittrich"
     GithubUser = "matthid"
     Version = release.NugetVersion
+    GeneratedFileList =
+      [ "Yaaf.ApplicationInsights.dll"; "Yaaf.ApplicationInsights.xml"
+        "Microsoft.ApplicationInsights.dll"; "Microsoft.ApplicationInsights.xml" ]
     NugetPackages =
       [ "Yaaf.ApplicationInsights.nuspec", (fun config p ->
           { p with
               Version = config.Version
               ReleaseNotes = toLines release.Notes
-              Dependencies = 
-                [  "Microsoft.ApplicationInsights", GetPackageVersion "packages" "Microsoft.ApplicationInsights" ] }) ]
+              DependenciesByFramework =
+                [ { FrameworkVersion = "net40"
+                    Dependencies = 
+                      [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
+                        "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                      ] }
+                  { FrameworkVersion = "net45"
+                    Dependencies = 
+                      [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                      ] }
+                  { FrameworkVersion = "portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1"
+                    Dependencies = 
+                      [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
+                        "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                      ] } ]
+          }) ]
     UseNuget = true
     SetAssemblyFileVersions = (fun config ->
       let info =
@@ -63,7 +84,7 @@ let buildConfig =
     RestrictReleaseToWindows = false
     DisableMSTest = true
     BuildTargets =
-     [ (*{ BuildParams.WithSolution with
+     [ { BuildParams.WithSolution with
           // The default build
           PlatformName = "Net40"
           SimpleBuildName = "net40" }
@@ -73,7 +94,7 @@ let buildConfig =
           SimpleBuildName = "profile111"
           FindUnitTestDlls =
             // Don't run on mono.
-            if isMono then (fun _ -> Seq.empty) else BuildParams.Empty.FindUnitTestDlls }*)
+            if isMono then (fun _ -> Seq.empty) else BuildParams.Empty.FindUnitTestDlls }
        { BuildParams.WithSolution with
           // The generated templates
           PlatformName = "Net45"

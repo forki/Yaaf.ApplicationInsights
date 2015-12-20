@@ -8,6 +8,7 @@ open System.Diagnostics
 open Microsoft.ApplicationInsights
 open Microsoft.ApplicationInsights.DataContracts
 
+#if !PCL
 /// <summary>
 /// Listener that routes all tracing and debugging output to ApplicationInsights logging framework.
 /// The messages will be uploaded to the Application Insights cloud service.
@@ -102,3 +103,5 @@ type ApplicationInsightsTraceListener(key) as x =
     x.Write(message + System.Environment.NewLine)
 
   member x.Client = client
+
+#endif

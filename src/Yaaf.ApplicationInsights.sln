@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project_root", "project_root", "{4C04B011-7998-4549-A3B5-E57AAF5A2966}"
 	ProjectSection(SolutionItems) = preProject
 		..\buildConfig.fsx = ..\buildConfig.fsx
 		..\LICENSE.md = ..\LICENSE.md
-		..\packages.config = ..\packages.config
+		..\paket.dependencies = ..\paket.dependencies
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
@@ -64,40 +64,62 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test.Yaaf.ApplicationInsigh
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Yaaf.ApplicationInsights", "source\Yaaf.ApplicationInsights\Yaaf.ApplicationInsights.fsproj", "{FA96EF91-C732-48CD-94EF-8308E7EF36C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ApplicationInsights", "source\Microsoft.ApplicationInsights\Microsoft.ApplicationInsights.csproj", "{AAAB1F32-DB59-4400-BD70-F6C6498686BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|Net40 = Debug|Net40
 		Debug|Net45 = Debug|Net45
 		Debug|Profile111 = Debug|Profile111
+		Release|Any CPU = Release|Any CPU
 		Release|Net40 = Release|Net40
 		Release|Net45 = Release|Net45
 		Release|Profile111 = Release|Profile111
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Any CPU.ActiveCfg = Debug|Profile111
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Net40.ActiveCfg = Debug|Net40
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Net40.Build.0 = Debug|Net40
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Net45.ActiveCfg = Debug|Net45
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Net45.Build.0 = Debug|Net45
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Profile111.ActiveCfg = Debug|Profile111
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Debug|Profile111.Build.0 = Debug|Profile111
+		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Any CPU.ActiveCfg = Release|Profile111
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Net40.ActiveCfg = Release|Net40
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Net40.Build.0 = Release|Net40
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Net45.ActiveCfg = Release|Net45
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Net45.Build.0 = Release|Net45
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Profile111.ActiveCfg = Release|Profile111
 		{7F071170-11A8-4CB5-9F08-7D2951018E3F}.Release|Profile111.Build.0 = Release|Profile111
+		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Any CPU.ActiveCfg = Debug|Profile111
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Net40.ActiveCfg = Debug|Net40
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Net40.Build.0 = Debug|Net40
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Net45.ActiveCfg = Debug|Net45
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Net45.Build.0 = Debug|Net45
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Profile111.ActiveCfg = Debug|Profile111
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Debug|Profile111.Build.0 = Debug|Profile111
+		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Any CPU.ActiveCfg = Release|Profile111
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Net40.ActiveCfg = Release|Net40
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Net40.Build.0 = Release|Net40
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Net45.ActiveCfg = Release|Net45
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Net45.Build.0 = Release|Net45
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Profile111.ActiveCfg = Release|Profile111
 		{FA96EF91-C732-48CD-94EF-8308E7EF36C2}.Release|Profile111.Build.0 = Release|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Any CPU.ActiveCfg = Debug|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Net40.ActiveCfg = Debug|Net40
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Net40.Build.0 = Debug|Net40
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Net45.ActiveCfg = Debug|Net45
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Net45.Build.0 = Debug|Net45
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Profile111.ActiveCfg = Debug|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Debug|Profile111.Build.0 = Debug|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Any CPU.ActiveCfg = Release|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Net40.ActiveCfg = Release|Net40
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Net40.Build.0 = Release|Net40
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Net45.ActiveCfg = Release|Net45
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Net45.Build.0 = Release|Net45
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Profile111.ActiveCfg = Release|Profile111
+		{AAAB1F32-DB59-4400-BD70-F6C6498686BA}.Release|Profile111.Build.0 = Release|Profile111
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

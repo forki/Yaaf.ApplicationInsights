@@ -7,8 +7,8 @@
     <authors>@authors@</authors>
     <owners>@authors@</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://github.com/matthid/Yaaf.Logging/blob/develop/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/matthid/Yaaf.Logging</projectUrl>
+    <licenseUrl>https://github.com/matthid/Yaaf.ApplicationInsights/blob/develop/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/matthid/Yaaf.ApplicationInsights</projectUrl>
     <summary>@summary@</summary>
     <description>@description@</description>
     <releaseNotes>@releaseNotes@</releaseNotes>
@@ -17,14 +17,24 @@
     @dependencies@
   </metadata>
   <files>
-    <file src="release/lib/net45/Yaaf.Logging.dll" target="lib\net45\Yaaf.Logging.dll" />
-    <file src="release/lib/net45/Yaaf.Logging.xml" target="lib\net45\Yaaf.Logging.xml" />
-    <file src="release/lib/net40/Yaaf.Logging.dll" target="lib\net40\Yaaf.Logging.dll" />
-    <file src="release/lib/net40/Yaaf.Logging.xml" target="lib\net40\Yaaf.Logging.xml" />
-    <file src="release/lib/profile111/Yaaf.Logging.dll"
-          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Yaaf.Logging.dll" />
-    <file src="release/lib/profile111/Yaaf.Logging.xml"
-          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Yaaf.Logging.xml" />
+    <file src="release/lib/net45/Yaaf.ApplicationInsights.dll" target="lib\net45\Yaaf.ApplicationInsights.dll" />
+    <file src="release/lib/net45/Yaaf.ApplicationInsights.xml" target="lib\net45\Yaaf.ApplicationInsights.xml" />
+    <file src="release/lib/net45/Microsoft.ApplicationInsights.dll" target="lib\net45\Microsoft.ApplicationInsights.dll" />
+    <file src="release/lib/net45/Microsoft.ApplicationInsights.xml" target="lib\net45\Microsoft.ApplicationInsights.xml" />
+    
+    <file src="release/lib/net40/Yaaf.ApplicationInsights.dll" target="lib\net40\Yaaf.ApplicationInsights.dll" />
+    <file src="release/lib/net40/Yaaf.ApplicationInsights.xml" target="lib\net40\Yaaf.ApplicationInsights.xml" />
+    <file src="release/lib/net40/Microsoft.ApplicationInsights.dll" target="lib\net40\Microsoft.ApplicationInsights.dll" />
+    <file src="release/lib/net40/Microsoft.ApplicationInsights.xml" target="lib\net40\Microsoft.ApplicationInsights.xml" />
+    
+    <file src="release/lib/profile111/Yaaf.ApplicationInsights.dll"
+          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Yaaf.ApplicationInsights.dll" />
+    <file src="release/lib/profile111/Yaaf.ApplicationInsights.xml"
+          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Yaaf.ApplicationInsights.xml" />
+    <file src="release/lib/profile111/Microsoft.ApplicationInsights.dll"
+          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Microsoft.ApplicationInsights.dll" />
+    <file src="release/lib/profile111/Microsoft.ApplicationInsights.xml"
+          target="lib\portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1\Microsoft.ApplicationInsights.xml" />
     <file src="LICENSE.md" target="LICENSE.md" />
     <file src="README.md" target="README.md" />
   </files>

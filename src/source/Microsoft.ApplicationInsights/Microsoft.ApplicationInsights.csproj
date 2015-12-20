@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AAAB1F32-DB59-4400-BD70-F6C6498686BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.ApplicationInsights</RootNamespace>
+    <AssemblyName>Microsoft.ApplicationInsights</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Net40' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">DEBUG;TRACE;NO_PCL;NET40;CC</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">DEBUG;TRACE;NO_PCL;NET40;MONO;CC</DefineConstants>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Net40' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)/../build/net40</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">TRACE;NO_PCL;NET40;CC</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">TRACE;NO_PCL;NET40;MONO;CC</DefineConstants>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Net45' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">DEBUG;TRACE;NO_PCL;NET45;CC</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">DEBUG;TRACE;NO_PCL;NET45;MONO;CC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Net45' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)/../build/net45</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">TRACE;NO_PCL;NET45;CC</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">TRACE;NO_PCL;NET45;MONO;CC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Profile111' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">DEBUG;TRACE;NET45;PCL;PCL_111;CORE_PCL</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">DEBUG;TRACE;NET45;PCL;PCL_111;MONO;CORE_PCL</DefineConstants>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetProfile>netcore</TargetProfile>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Profile111' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)/../build/profile111</OutputPath>
+    <DefineConstants Condition=" '$(OS)' != 'Unix' ">TRACE;NET45;PCL;PCL_111;CORE_PCL</DefineConstants>
+    <DefineConstants Condition=" '$(OS)' == 'Unix' ">TRACE;NET45;PCL;PCL_111;MONO;CORE_PCL</DefineConstants>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetProfile>netcore</TargetProfile>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\..\packages\Yaaf.AdvancedBuilding\content\build.targets" />
+  <Import Project="$(CSharpTargetsPath)" Condition="Exists('$(CSharpTargetsPath)')" />
+  <ItemGroup>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Net40\Extensibility\Implementation\TelemetryConfigurationFactory.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryConfigurationFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\PCL\TimeSpanEx.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TimeSpanEx.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\PCL\Extensibility\Implementation\Platform\PlatformImplementation.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PlatformImplementation.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Constants.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\GlobalSuppressions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\OperationTelemetryExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/OperationTelemetryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\TelemetryClient.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Utils.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Utils.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\InMemoryChannel.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/InMemoryChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\InMemoryTransmitter.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/InMemoryTransmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\ITelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ITelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\ITelemetryChannel.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ITelemetryChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\TelemetryBuffer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryBuffer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Channel\Transmission.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Transmission.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\DependencyTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DependencyTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\EventTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/EventTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\ExceptionHandledAt.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ExceptionHandledAt.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\ExceptionTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ExceptionTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\IJsonWriter.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IJsonWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\InnerExceptionCountExceededException.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/InnerExceptionCountExceededException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\ISupportProperties.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ISupportProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\ISupportSampling.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ISupportSampling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\MetricTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/MetricTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\PageViewTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PageViewTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\PerformanceCounterTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PerformanceCounterTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\RequestTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/RequestTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\SessionState.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SessionState.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\SessionStateTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SessionStateTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\SeverityLevel.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SeverityLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\TelemetryContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\DataContracts\TraceTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TraceTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\IDebugOutput.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IDebugOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\IOperationHolder.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IOperationHolder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\ITelemetryInitializer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ITelemetryInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\ITelemetryModule.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ITelemetryModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\ITelemetryProcessor.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ITelemetryProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\SdkVersionPropertyTelemetryInitializer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SdkVersionPropertyTelemetryInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\SequencePropertyInitializer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SequencePropertyInitializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\TelemetryConfiguration.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\TelemetryConfigurationExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryConfigurationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\TelemetryModules.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryModules.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Clock.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Clock.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\CloudContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/CloudContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\ComponentContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ComponentContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\DebugOutput.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DebugOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\DeviceContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DeviceContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\ExceptionConverter.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ExceptionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\FixedSizeQueue.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/FixedSizeQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\IClock.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IClock.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\InternalContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/InternalContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\IPlatform.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IPlatform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\IPlatformDispatcher.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IPlatformDispatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\IRandomNumberBatchGenerator.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IRandomNumberBatchGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\JsonSerializer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/JsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\JsonWriter.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/JsonWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\LocationContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/LocationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\OperationContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/OperationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\OperationTelemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/OperationTelemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Property.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Property.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\SessionContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SessionContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\SeverityLevelExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SeverityLevelExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\SnapshottingCollection.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SnapshottingCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\SnapshottingDictionary.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SnapshottingDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\SnapshottingList.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SnapshottingList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TaskTimer.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TaskTimer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Telemetry.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Telemetry.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TelemetryContextExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryContextExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TelemetryItemExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryItemExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TelemetryProcessorChain.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryProcessorChain.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TelemetryProcessorChainBuilder.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TelemetryProcessorChainBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TransmissionProcessor.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TransmissionProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\TypeExtensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\UserContext.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/UserContext.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\WeakConcurrentRandom.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/WeakConcurrentRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\XorshiftRandomBatchGenerator.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/XorshiftRandomBatchGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\AjaxCallData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/AjaxCallData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\AppInsightsTypes.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/AppInsightsTypes.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\ContextTagKeys.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ContextTagKeys.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\ContextTagKeys.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ContextTagKeys.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\DataPoint.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DataPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\DependencyKind.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DependencyKind.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\EventData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/EventData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\ExceptionData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ExceptionData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\ExceptionDetails.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ExceptionDetails.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\MessageData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/MessageData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\MetricData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/MetricData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\PageViewData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PageViewData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\PageViewPerfData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PageViewPerfData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\PerformanceCounterData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PerformanceCounterData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\PerformanceCounterData.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PerformanceCounterData.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\RemoteDependencyData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/RemoteDependencyData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\RequestData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/RequestData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\SessionStateData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SessionStateData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\SessionStateData.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SessionStateData.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\SeverityLevel.g.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SeverityLevel.g.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\StackFrame.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/StackFrame.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\External\Tags.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Tags.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Platform\PlatformSingleton.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PlatformSingleton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\ApplicationNameProvider.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ApplicationNameProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\CoreEventSource.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/CoreEventSource.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventCounters.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnoisticsEventCounters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventThrottling.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnoisticsEventThrottling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventThrottlingDefaults.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnoisticsEventThrottlingDefaults.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventThrottlingManager.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnoisticsEventThrottlingManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventThrottlingScheduler.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnoisticsEventThrottlingScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsEventListener.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnosticsEventListener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsListener.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnosticsListener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsTelemetryModule.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/DiagnosticsTelemetryModule.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\EventMetaData.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/EventMetaData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\EventSourceKeywords.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/EventSourceKeywords.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\Extensions.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\F5DiagnosticsSender.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/F5DiagnosticsSender.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\IDiagnoisticsEventThrottling.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IDiagnoisticsEventThrottling.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\IDiagnoisticsEventThrottlingManager.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IDiagnoisticsEventThrottlingManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\IDiagnoisticsEventThrottlingScheduler.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IDiagnoisticsEventThrottlingScheduler.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\IDiagnosticsSender.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/IDiagnosticsSender.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\PortalDiagnosticsQueueSender.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PortalDiagnosticsQueueSender.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\PortalDiagnosticsSender.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/PortalDiagnosticsSender.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\SpinWait.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/SpinWait.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\ThreadResourceLock.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/ThreadResourceLock.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\TraceEvent.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/TraceEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Properties\AssemblyInfo.cs">
+      <Paket>True</Paket>
+      <Link>paket-files/AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AL\AsyncLocalBasedOperationHolder.cs" />
+    <Compile Include="AL\AsyncLocalHelpers.cs" />
+    <Compile Include="AL\OperationContextForAsyncLocal.cs" />
+    <Compile Include="CC\CallContextBasedOperationHolder.cs" />
+    <Compile Include="CC\CallContextHelpers.cs" />
+    <Compile Include="CC\OperationContextForCallContext.cs" />
+    <Compile Include="OperationCorrelationTelemetryInitializer.cs" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CreateInsightsDependencies.fsx" />
+  </ItemGroup>
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build\build\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build\build\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <!--Reference Include="System.IO" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Threading.Tasks" /-->
+    <Reference Include="System.Net" />
+    <Reference Include="System.Diagnostics" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\net40\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\net40\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\net40\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Silverlight' And $(TargetFrameworkVersion) == 'v4.0'">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Silverlight' And $(TargetFrameworkVersion) == 'v5.0'">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl5\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl5\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl5\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhone' And $(TargetFrameworkVersion) == 'v7.1'">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile14') Or ($(TargetFrameworkProfile) == 'Profile19') Or ($(TargetFrameworkProfile) == 'Profile24') Or ($(TargetFrameworkProfile) == 'Profile37') Or ($(TargetFrameworkProfile) == 'Profile42') Or ($(TargetFrameworkProfile) == 'Profile47') Or ($(TargetFrameworkProfile) == 'Profile136') Or ($(TargetFrameworkProfile) == 'Profile147') Or ($(TargetFrameworkProfile) == 'Profile158') Or ($(TargetFrameworkProfile) == 'Profile225') Or ($(TargetFrameworkProfile) == 'Profile240') Or ($(TargetFrameworkProfile) == 'Profile255') Or ($(TargetFrameworkProfile) == 'Profile328') Or ($(TargetFrameworkProfile) == 'Profile336') Or ($(TargetFrameworkProfile) == 'Profile344')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl5+win8+wp8+wpa81\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl5+win8+wp8+wpa81\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl5+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile3') Or ($(TargetFrameworkProfile) == 'Profile18') Or ($(TargetFrameworkProfile) == 'Profile23') Or ($(TargetFrameworkProfile) == 'Profile41') Or ($(TargetFrameworkProfile) == 'Profile46')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile31') Or ($(TargetFrameworkProfile) == 'Profile84') Or ($(TargetFrameworkProfile) == 'Profile92') Or ($(TargetFrameworkProfile) == 'Profile102') Or ($(TargetFrameworkProfile) == 'Profile157')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8+wp8+wpa81\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8+wp8+wpa81\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile36') Or ($(TargetFrameworkProfile) == 'Profile143') Or ($(TargetFrameworkProfile) == 'Profile154')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp8+wpa81\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp8+wpa81\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp8+wpa81\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile5') Or ($(TargetFrameworkProfile) == 'Profile6')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+win8\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile88') Or ($(TargetFrameworkProfile) == 'Profile96') Or ($(TargetFrameworkProfile) == 'Profile104')">
+      <ItemGroup>
+        <Reference Include="System.IO">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp71+wpa81\System.IO.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp71+wpa81\System.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl\lib\portable-net40+sl4+win8+wp71+wpa81\System.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETCore'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\win8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\win8\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' ) ">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Silverlight' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v5.0')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhone' And $(TargetFrameworkVersion) == 'v7.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhone' And ($(TargetFrameworkVersion) == 'v8.0' Or $(TargetFrameworkVersion) == 'v8.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == 'WindowsPhoneApp'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile32') Or ($(TargetFrameworkProfile) == 'Profile44') Or ($(TargetFrameworkProfile) == 'Profile111') Or ($(TargetFrameworkProfile) == 'Profile151')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile3') Or ($(TargetFrameworkProfile) == 'Profile5') Or ($(TargetFrameworkProfile) == 'Profile6') Or ($(TargetFrameworkProfile) == 'Profile14') Or ($(TargetFrameworkProfile) == 'Profile18') Or ($(TargetFrameworkProfile) == 'Profile19') Or ($(TargetFrameworkProfile) == 'Profile23') Or ($(TargetFrameworkProfile) == 'Profile24') Or ($(TargetFrameworkProfile) == 'Profile36') Or ($(TargetFrameworkProfile) == 'Profile37') Or ($(TargetFrameworkProfile) == 'Profile41') Or ($(TargetFrameworkProfile) == 'Profile42') Or ($(TargetFrameworkProfile) == 'Profile46') Or ($(TargetFrameworkProfile) == 'Profile47') Or ($(TargetFrameworkProfile) == 'Profile88') Or ($(TargetFrameworkProfile) == 'Profile92') Or ($(TargetFrameworkProfile) == 'Profile96') Or ($(TargetFrameworkProfile) == 'Profile102') Or ($(TargetFrameworkProfile) == 'Profile104') Or ($(TargetFrameworkProfile) == 'Profile136') Or ($(TargetFrameworkProfile) == 'Profile143') Or ($(TargetFrameworkProfile) == 'Profile147') Or ($(TargetFrameworkProfile) == 'Profile154') Or ($(TargetFrameworkProfile) == 'Profile158') Or ($(TargetFrameworkProfile) == 'Profile225') Or ($(TargetFrameworkProfile) == 'Profile240') Or ($(TargetFrameworkProfile) == 'Profile255') Or ($(TargetFrameworkProfile) == 'Profile328') Or ($(TargetFrameworkProfile) == 'Profile336') Or ($(TargetFrameworkProfile) == 'Profile344')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net40+sl4+win8+wp71+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkProfile) == 'Profile31') Or ($(TargetFrameworkProfile) == 'Profile49') Or ($(TargetFrameworkProfile) == 'Profile78') Or ($(TargetFrameworkProfile) == 'Profile84') Or ($(TargetFrameworkProfile) == 'Profile157') Or ($(TargetFrameworkProfile) == 'Profile259')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Threading.Tasks.Extensions">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net45+win8+wp8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Microsoft.Threading.Tasks">
+          <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\portable-net45+win8+wp8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+          <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist\lib\net35\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' )">
+      <ItemGroup>
+        <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+          <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'WindowsPhoneApp') Or ($(TargetFrameworkIdentifier) == '.NETCore') Or ($(TargetFrameworkProfile) == 'Profile32')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+          <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist\lib\portable-win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+</Project>
