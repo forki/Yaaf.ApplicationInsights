@@ -1,4 +1,6 @@
 FSharp.Core
-Microsoft.ApplicationInsights
+Microsoft.Bcl
+Microsoft.Bcl.Async
+Microsoft.Diagnostics.Tracing.EventSource.Redist
 Unquote
 NUnit
