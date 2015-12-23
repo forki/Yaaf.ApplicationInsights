@@ -1,3 +1,4 @@
+Yaaf.Logging
 Microsoft.Bcl
 Microsoft.Bcl.Async
 Microsoft.Diagnostics.Tracing.EventSource.Redist
@@ -99,15 +100,11 @@ File:StackFrame.cs
 File:Tags.cs
 File:PlatformSingleton.cs
 File:ApplicationNameProvider.cs
-File:CoreEventSource.cs
 File:DiagnoisticsEventCounters.cs
 File:DiagnoisticsEventThrottling.cs
 File:DiagnoisticsEventThrottlingDefaults.cs
 File:DiagnoisticsEventThrottlingManager.cs
 File:DiagnoisticsEventThrottlingScheduler.cs
-File:DiagnosticsEventListener.cs
-File:DiagnosticsListener.cs
-File:DiagnosticsTelemetryModule.cs
 File:EventMetaData.cs
 File:EventSourceKeywords.cs
 File:Extensions.cs

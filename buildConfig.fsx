@@ -36,8 +36,8 @@ let buildConfig =
  { BuildConfiguration.Defaults with
     ProjectName = "Yaaf.ApplicationInsights"
     CopyrightNotice = "Yaaf.ApplicationInsights Copyright © Matthias Dittrich 2015-2016"
-    ProjectSummary = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging)."
-    ProjectDescription = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging)."
+    ProjectSummary = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging and usable with profile111)."
+    ProjectDescription = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging and usable with profile111)."
     ProjectAuthors = ["Matthias Dittrich"]
     NugetTags =  "logging tracesource applicationsinsights C# F# dotnet .net"
     PageAuthor = "Matthias Dittrich"
@@ -55,20 +55,23 @@ let buildConfig =
                 [ { FrameworkVersion = "net40"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                         "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
                         "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
-                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist"
                       ] }
                   { FrameworkVersion = "net45"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                       ] }
                   { FrameworkVersion = "portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                         "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
                         "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
-                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist"
                       ] } ]
           }) ]
     UseNuget = true

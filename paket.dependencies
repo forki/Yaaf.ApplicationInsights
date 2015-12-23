@@ -9,10 +9,10 @@ nuget NUnit.Runners ~> 2
 nuget NUnit ~> 2
 nuget Unquote
 nuget FSharp.Core ~> 4.0.0
-nuget Microsoft.ApplicationInsights
-nuget Microsoft.Bcl.Async
-nuget Microsoft.Bcl
-nuget Microsoft.Diagnostics.Tracing.EventSource.Redist
+nuget Yaaf.Logging
+nuget Microsoft.Bcl.Async framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
+nuget Microsoft.Bcl framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
+nuget Microsoft.Diagnostics.Tracing.EventSource.Redist framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
 
 // For Profile 111 (see CreateInsightsDependencies.fsx)
 
@@ -113,15 +113,16 @@ github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibilit
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/External/Tags.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Platform/PlatformSingleton.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/ApplicationNameProvider.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventCounters.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottling.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingDefaults.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingManager.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingScheduler.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsEventListener.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsListener.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsTelemetryModule.cs
+// Not supported on mono
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsEventListener.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsListener.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsTelemetryModule.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventMetaData.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventSourceKeywords.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/Extensions.cs

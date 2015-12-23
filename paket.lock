@@ -1,5 +1,5 @@
 NUGET
-  remote: https://nuget.org/api/v2
+  remote: https://www.nuget.org/api/v2
   specs:
     FAKE (4.9.3)
     FSharp.Compiler.Service (1.4.0.6)
@@ -9,15 +9,12 @@ NUGET
       FSharpVSPowerTools.Core (2.1.0)
     FSharpVSPowerTools.Core (2.1.0)
       FSharp.Compiler.Service (>= 1.4.0.6)
-    Microsoft.ApplicationInsights (1.2.3)
-      Microsoft.Bcl.Async (>= 1.0.168) - framework: net40, wpv8.0
-      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
-    Microsoft.Bcl (1.1.10)
+    Microsoft.Bcl (1.1.10) - framework: net35, net40, dnx451, dnxcore50, monoandroid, monotouch, monomac, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, xamarinios, xamarinmac, winv4.5, winv4.5.1
       Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Bcl.Async (1.0.168)
+    Microsoft.Bcl.Async (1.0.168) - framework: net35, net40, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, monotouch, monoandroid, monomac, xamarinios, xamarinmac, winv4.5, winv4.5.1, dnx451, dnxcore50
       Microsoft.Bcl (>= 1.1.8)
-    Microsoft.Bcl.Build (1.0.21) - import_targets: false
-    Microsoft.Diagnostics.Tracing.EventSource.Redist (1.1.28)
+    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: net35, net40, dnx451, dnxcore50, monoandroid, monotouch, monomac, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, xamarinios, xamarinmac, winv4.5, winv4.5.1
+    Microsoft.Diagnostics.Tracing.EventSource.Redist (1.1.28) - framework: net35, net40, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, monotouch, monoandroid, monomac, xamarinios, xamarinmac, winv4.5, winv4.5.1, dnx451, dnxcore50
     NuGet.CommandLine (3.3.0)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)
@@ -26,6 +23,7 @@ NUGET
       FAKE (4.9.3)
       FSharp.Formatting (2.12.0)
       FSharpVSPowerTools.Core (2.1.0)
+    Yaaf.Logging (2.0.0)
 GITHUB
   remote: Microsoft/ApplicationInsights-dotnet
   specs:
@@ -110,15 +108,11 @@ GITHUB
     src/Core/Managed/Shared/Extensibility/Implementation/TelemetryProcessorChain.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/TelemetryProcessorChainBuilder.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/ApplicationNameProvider.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
-    src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventCounters.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottling.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingDefaults.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingManager.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingScheduler.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
-    src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsEventListener.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
-    src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsListener.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
-    src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsTelemetryModule.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventMetaData.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventSourceKeywords.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/Extensions.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
