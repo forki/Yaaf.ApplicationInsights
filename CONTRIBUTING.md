@@ -1,4 +1,4 @@
-﻿# Yaaf.Logging
+﻿# Yaaf.ApplicationInsights
 
 ## Contributing (Code)
 
