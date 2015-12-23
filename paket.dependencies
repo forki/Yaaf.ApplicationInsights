@@ -119,9 +119,10 @@ github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibilit
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingDefaults.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingManager.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingScheduler.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsEventListener.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsListener.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsTelemetryModule.cs
+// Not supported on mono
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsEventListener.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsListener.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnosticsTelemetryModule.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventMetaData.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/EventSourceKeywords.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/Extensions.cs

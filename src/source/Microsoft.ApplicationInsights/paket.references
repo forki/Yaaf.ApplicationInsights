@@ -105,9 +105,6 @@ File:DiagnoisticsEventThrottling.cs
 File:DiagnoisticsEventThrottlingDefaults.cs
 File:DiagnoisticsEventThrottlingManager.cs
 File:DiagnoisticsEventThrottlingScheduler.cs
-File:DiagnosticsEventListener.cs
-File:DiagnosticsListener.cs
-File:DiagnosticsTelemetryModule.cs
 File:EventMetaData.cs
 File:EventSourceKeywords.cs
 File:Extensions.cs

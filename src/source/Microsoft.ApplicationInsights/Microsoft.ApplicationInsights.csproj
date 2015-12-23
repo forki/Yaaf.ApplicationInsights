@@ -502,18 +502,6 @@
       <Paket>True</Paket>
       <Link>paket-files/DiagnoisticsEventThrottlingScheduler.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsEventListener.cs">
-      <Paket>True</Paket>
-      <Link>paket-files/DiagnosticsEventListener.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsListener.cs">
-      <Paket>True</Paket>
-      <Link>paket-files/DiagnosticsListener.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnosticsTelemetryModule.cs">
-      <Paket>True</Paket>
-      <Link>paket-files/DiagnosticsTelemetryModule.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\EventMetaData.cs">
       <Paket>True</Paket>
       <Link>paket-files/EventMetaData.cs</Link>
@@ -820,7 +808,7 @@
         </Reference>
       </ItemGroup>
     </When>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' ) ">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
       <ItemGroup>
         <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
           <HintPath>..\..\..\packages\Microsoft.Bcl.Async\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
@@ -963,10 +951,19 @@
         </Reference>
       </ItemGroup>
     </When>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' )">
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3')">
       <ItemGroup>
         <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
           <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+          <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist\lib\net46\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
