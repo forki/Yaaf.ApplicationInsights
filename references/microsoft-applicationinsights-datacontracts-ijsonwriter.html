@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IJsonWriter - Yaaf.ApplicationInsights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Matthias Dittrich">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.css" />
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/tips.js"></script>
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://tpetricek.github.io/FSharp.Formatting/"><img height="16" width="16" src="https://matthid.github.io/Yaaf.AdvancedBuilding/content/img/FSharp.Formatting.png" /> F# Formatting</a></li>
+        </ul>
+        <h3 class="muted"><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Yaaf.ApplicationInsights</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>IJsonWriter </h1>
+<div class="xmldoc">
+    Defined in Microsoft.ApplicationInsights.dll.
+</div>
+<div class="xmldoc">
+
+            Encapsulates logic for serializing objects to JSON.
+            </br></div>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '91', 91)" onmouseover="showTip(event, '91', 91)">
+            WriteComma()
+          </code>
+          <div class="tip" id="91">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes comma.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '92', 92)" onmouseover="showTip(event, '92', 92)">
+            WriteEndArray()
+          </code>
+          <div class="tip" id="92">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes closing/right square bracket.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '93', 93)" onmouseover="showTip(event, '93', 93)">
+            WriteEndObject()
+          </code>
+          <div class="tip" id="93">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes closing/right curly brace.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '94', 94)" onmouseover="showTip(event, '94', 94)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="94">
+            <strong>Signature:</strong> (name:string * value:string) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.String">String</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '95', 95)" onmouseover="showTip(event, '95', 95)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="95">
+            <strong>Signature:</strong> (name:string * value:Nullable&lt;bool&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.Boolean">Boolean</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '96', 96)" onmouseover="showTip(event, '96', 96)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="96">
+            <strong>Signature:</strong> (name:string * value:Nullable&lt;int&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.Int32">Int32</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '97', 97)" onmouseover="showTip(event, '97', 97)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="97">
+            <strong>Signature:</strong> (name:string * value:Nullable&lt;float&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.Double">Double</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '98', 98)" onmouseover="showTip(event, '98', 98)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="98">
+            <strong>Signature:</strong> (name:string * value:Nullable&lt;TimeSpan&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.TimeSpan">TimeSpan</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '99', 99)" onmouseover="showTip(event, '99', 99)">
+            WriteProperty(name, value)
+          </code>
+          <div class="tip" id="99">
+            <strong>Signature:</strong> (name:string * value:Nullable&lt;DateTimeOffset&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.DateTimeOffset">DateTimeOffset</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '100', 100)" onmouseover="showTip(event, '100', 100)">
+            WriteProperty(name, values)
+          </code>
+          <div class="tip" id="100">
+            <strong>Signature:</strong> (name:string * values:IDictionary&lt;string,float&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.Collections.Generic.IDictionary`2">IDictionary`2</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '101', 101)" onmouseover="showTip(event, '101', 101)">
+            WriteProperty(name, values)
+          </code>
+          <div class="tip" id="101">
+            <strong>Signature:</strong> (name:string * values:IDictionary&lt;string,string&gt;) -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a <a href="http://msdn.microsoft.com/en-us/library/System.Collections.Generic.IDictionary`2">IDictionary`2</a> property.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '102', 102)" onmouseover="showTip(event, '102', 102)">
+            WritePropertyName(name)
+          </code>
+          <div class="tip" id="102">
+            <strong>Signature:</strong> name:string -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes a property name in double quotation marks, followed by a colon.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '103', 103)" onmouseover="showTip(event, '103', 103)">
+            WriteRawValue(value)
+          </code>
+          <div class="tip" id="103">
+            <strong>Signature:</strong> value:obj -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes <a href="http://msdn.microsoft.com/en-us/library/System.Object">Object</a> as raw value directly.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '104', 104)" onmouseover="showTip(event, '104', 104)">
+            WriteStartArray()
+          </code>
+          <div class="tip" id="104">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes opening/left square bracket.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '105', 105)" onmouseover="showTip(event, '105', 105)">
+            WriteStartObject()
+          </code>
+          <div class="tip" id="105">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Writes opening/left curly brace.
+            </br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">
+            <img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+          </a>
+
+          <ul class="nav nav-list" id="menu">
+
+            <li class="nav-header">Yaaf.ApplicationInsights</li>
+
+            <li class="divider"></li>
+            <li><a href="https://www.nuget.org/packages/Yaaf.ApplicationInsights/">Get Yaaf.ApplicationInsights package via NuGet</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights">Source Code</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues">Open bugs and feature requests</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues/new">Report Issue or Request Feature</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/blob/develop/LICENSE.md">License (Apache2)</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/Contributing.html">Contributing</a></li>
+            
+            <li class="nav-header">Documentation</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Quick Intro</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/ReleaseNotes.html">Release Notes</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/DevelopReadme.html">Development Intro</a></li>
+
+            <li class="nav-header">Reference</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/references/index.html">API Reference</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+      <a href="https://github.com/matthid/Yaaf.ApplicationInsights"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    </body>
+  </html>

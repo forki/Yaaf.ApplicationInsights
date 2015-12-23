@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PageViewTelemetry - Yaaf.ApplicationInsights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Matthias Dittrich">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.css" />
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/tips.js"></script>
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://tpetricek.github.io/FSharp.Formatting/"><img height="16" width="16" src="https://matthid.github.io/Yaaf.AdvancedBuilding/content/img/FSharp.Formatting.png" /> F# Formatting</a></li>
+        </ul>
+        <h3 class="muted"><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Yaaf.ApplicationInsights</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>PageViewTelemetry </h1>
+<div class="xmldoc">
+    Defined in Microsoft.ApplicationInsights.dll.
+</div>
+<div class="xmldoc">
+
+            Telemetry type used to track page views.
+            </br></div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '120', 120)" onmouseover="showTip(event, '120', 120)">
+            new()
+          </code>
+          <div class="tip" id="120">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Initializes a new instance of the <a href="microsoft-applicationinsights-datacontracts-pageviewtelemetry.html">PageViewTelemetry</a> class.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+            new(pageName)
+          </code>
+          <div class="tip" id="121">
+            <strong>Signature:</strong> pageName:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Initializes a new instance of the <a href="microsoft-applicationinsights-datacontracts-pageviewtelemetry.html">PageViewTelemetry</a> class with the
+            specified .
+            </br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
+            Context
+          </code>
+          <div class="tip" id="122">
+            <strong>Signature:</strong> TelemetryContext<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets the context associated with the current telemetry item.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
+            Duration()
+          </code>
+          <div class="tip" id="123">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets the page view duration.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
+            Metrics
+          </code>
+          <div class="tip" id="124">
+            <strong>Signature:</strong> IDictionary&lt;string,float&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets a dictionary of custom defined metrics.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
+            Name()
+          </code>
+          <div class="tip" id="125">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets the name of the metric.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
+            Properties
+          </code>
+          <div class="tip" id="126">
+            <strong>Signature:</strong> IDictionary&lt;string,string&gt;<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets a dictionary of application-defined property names and values providing additional information about this page view.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '127', 127)" onmouseover="showTip(event, '127', 127)">
+            Sequence()
+          </code>
+          <div class="tip" id="127">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets the value that defines absolute order of the telemetry item.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '128', 128)" onmouseover="showTip(event, '128', 128)">
+            Timestamp()
+          </code>
+          <div class="tip" id="128">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+              <strong>Modifiers:</strong> abstract<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets date and time when event was recorded.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '129', 129)" onmouseover="showTip(event, '129', 129)">
+            Url()
+          </code>
+          <div class="tip" id="129">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets the page view Uri.
+            </br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">
+            <img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+          </a>
+
+          <ul class="nav nav-list" id="menu">
+
+            <li class="nav-header">Yaaf.ApplicationInsights</li>
+
+            <li class="divider"></li>
+            <li><a href="https://www.nuget.org/packages/Yaaf.ApplicationInsights/">Get Yaaf.ApplicationInsights package via NuGet</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights">Source Code</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues">Open bugs and feature requests</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues/new">Report Issue or Request Feature</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/blob/develop/LICENSE.md">License (Apache2)</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/Contributing.html">Contributing</a></li>
+            
+            <li class="nav-header">Documentation</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Quick Intro</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/ReleaseNotes.html">Release Notes</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/DevelopReadme.html">Development Intro</a></li>
+
+            <li class="nav-header">Reference</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/references/index.html">API Reference</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+      <a href="https://github.com/matthid/Yaaf.ApplicationInsights"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    </body>
+  </html>

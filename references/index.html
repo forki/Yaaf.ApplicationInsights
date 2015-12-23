@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespaces - Yaaf.ApplicationInsights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Matthias Dittrich">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.css" />
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/tips.js"></script>
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://tpetricek.github.io/FSharp.Formatting/"><img height="16" width="16" src="https://matthid.github.io/Yaaf.AdvancedBuilding/content/img/FSharp.Formatting.png" /> F# Formatting</a></li>
+        </ul>
+        <h3 class="muted"><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Yaaf.ApplicationInsights</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+<h1>Yaaf.ApplicationInsights</h1>
+
+<h2><a name="Overview" class="anchor" href="#Overview">Overview</a></h2>
+    <a href="#Microsoft.ApplicationInsights">Microsoft.ApplicationInsights</a><br />
+    <a href="#Microsoft.ApplicationInsights.Channel">Microsoft.ApplicationInsights.Channel</a><br />
+    <a href="#Microsoft.ApplicationInsights.DataContracts">Microsoft.ApplicationInsights.DataContracts</a><br />
+    <a href="#Microsoft.ApplicationInsights.Extensibility">Microsoft.ApplicationInsights.Extensibility</a><br />
+    <a href="#Microsoft.ApplicationInsights.Extensibility.Implementation">Microsoft.ApplicationInsights.Extensibility.Implementation</a><br />
+    <a href="#Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing">Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing</a><br />
+    <a href="#Yaaf.ApplicationInsights">Yaaf.ApplicationInsights</a><br />
+
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights" class="anchor" href="#Microsoft.ApplicationInsights">Microsoft.ApplicationInsights Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-operationtelemetryextensions.html">OperationTelemetryExtensions</a>
+          </td>
+          <td class="xmldoc">
+            Extension functions to operation telemetry that start and stop the timer.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-telemetryclient.html">TelemetryClient</a>
+          </td>
+          <td class="xmldoc">
+            Send events, metrics and other telemetry to the Application Insights service.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights.Channel" class="anchor" href="#Microsoft.ApplicationInsights.Channel">Microsoft.ApplicationInsights.Channel Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-channel-itelemetry.html">ITelemetry</a>
+          </td>
+          <td class="xmldoc">
+            The base telemetry type for application insights.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-channel-itelemetrychannel.html">ITelemetryChannel</a>
+          </td>
+          <td class="xmldoc">
+            Represents a communication channel for sending telemetry to application insights.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-channel-inmemorychannel.html">InMemoryChannel</a>
+          </td>
+          <td class="xmldoc">
+            Represents a communication channel for sending telemetry to Application Insights via HTTPS. There will be a buffer that will not be persisted, to enforce the
+            queued telemetry items to be sent, <a href="microsoft-applicationinsights-channel-itelemetrychannel.html">ITelemetryChannel.Flush</a> should be called.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-channel-transmission.html">Transmission</a>
+          </td>
+          <td class="xmldoc">
+            Implements an asynchronous transmission of data to an HTTP POST endpoint.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights.DataContracts" class="anchor" href="#Microsoft.ApplicationInsights.DataContracts">Microsoft.ApplicationInsights.DataContracts Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-dependencytelemetry.html">DependencyTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            The class that represents information about the collected dependency.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-eventtelemetry.html">EventTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used to track events.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-exceptionhandledat.html">ExceptionHandledAt</a>
+          </td>
+          <td class="xmldoc">
+            This enumeration is used by ExceptionTelemetry to identify if and where exception was handled.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-exceptiontelemetry.html">ExceptionTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used to track exceptions.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-ijsonwriter.html">IJsonWriter</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates logic for serializing objects to JSON.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-isupportproperties.html">ISupportProperties</a>
+          </td>
+          <td class="xmldoc">
+            Represents an object that supports application-defined properties.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-isupportsampling.html">ISupportSampling</a>
+          </td>
+          <td class="xmldoc">
+            Represent objects that support data sampling.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-metrictelemetry.html">MetricTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used to track metrics.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-pageviewtelemetry.html">PageViewTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used to track page views.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-performancecountertelemetry.html">PerformanceCounterTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            The class that represents information about performance counters.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-requesttelemetry.html">RequestTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about a web request handled by the application.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-sessionstate.html">SessionState</a>
+          </td>
+          <td class="xmldoc">
+            Contains values that identify state of a user session.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-sessionstatetelemetry.html">SessionStateTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used to track user sessions.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-severitylevel.html">SeverityLevel</a>
+          </td>
+          <td class="xmldoc">
+            This enumeration is used by ExceptionTelemetry and TraceTelemetry to identify severity level.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-telemetrycontext.html">TelemetryContext</a>
+          </td>
+          <td class="xmldoc">
+            Represents a context for sending telemetry to the Application Insights service.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-datacontracts-tracetelemetry.html">TraceTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry type used for log messages.
+            Contains a time and message and optionally some additional metadata.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights.Extensibility" class="anchor" href="#Microsoft.ApplicationInsights.Extensibility">Microsoft.ApplicationInsights.Extensibility Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-ioperationholder-1.html">IOperationHolder<'T></a>
+          </td>
+          <td class="xmldoc">
+            Represents the operation item that holds telemetry which is tracked on end request. Operation can be associated with either WEB or SQL dependencies.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-itelemetryinitializer.html">ITelemetryInitializer</a>
+          </td>
+          <td class="xmldoc">
+            Represents an object that initializes <a href="microsoft-applicationinsights-channel-itelemetry.html">ITelemetry</a> objects.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-itelemetrymodule.html">ITelemetryModule</a>
+          </td>
+          <td class="xmldoc">
+            Represents an object that supports initialization from <a href="microsoft-applicationinsights-extensibility-telemetryconfiguration.html">TelemetryConfiguration</a>.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-itelemetryprocessor.html">ITelemetryProcessor</a>
+          </td>
+          <td class="xmldoc">
+            Represents an object used to process telemetry as part of sending it to Application Insights.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-operationcorrelationtelemetryinitializer.html">OperationCorrelationTelemetryInitializer</a>
+          </td>
+          <td class="xmldoc">
+            Telemetry initializer that populates OperationContext for the telemetry item based on context stored in AsyncLocal variable.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-sequencepropertyinitializer.html">SequencePropertyInitializer</a>
+          </td>
+          <td class="xmldoc">
+            An <a href="microsoft-applicationinsights-extensibility-itelemetryinitializer.html">ITelemetryInitializer</a> that that populates <a href="microsoft-applicationinsights-channel-itelemetry.html">ITelemetry.Sequence</a> property for
+            the Microsoft internal telemetry sent to the Vortex endpoint.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-telemetryconfiguration.html">TelemetryConfiguration</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates the global telemetry configuration typically loaded from the ApplicationInsights.config file.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-telemetryconfigurationextensions.html">TelemetryConfigurationExtensions</a>
+          </td>
+          <td class="xmldoc">
+            Extension methods for TelemetryConfiguration.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights.Extensibility.Implementation" class="anchor" href="#Microsoft.ApplicationInsights.Extensibility.Implementation">Microsoft.ApplicationInsights.Extensibility.Implementation Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-cloudcontext.html">CloudContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about a cloud where an application is running.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-componentcontext.html">ComponentContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information describing an Application Insights component.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-devicecontext.html">DeviceContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about a device where an application is running.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-internalcontext.html">InternalContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates Internal information.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-jsonserializer.html">JsonSerializer</a>
+          </td>
+          <td class="xmldoc">
+            Serializes and compress the telemetry items into a JSON string. Compression will be done using GZIP, for Windows Phone 8 compression will be disabled because there
+            is API support for it.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-locationcontext.html">LocationContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates telemetry location information.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-operationcontext.html">OperationContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about an operation. Operation normally reflects an end to end scenario that starts from a user action (e.g. button click).
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-operationtelemetry.html">OperationTelemetry</a>
+          </td>
+          <td class="xmldoc">
+            Base class for telemetry types representing duration in time.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-sessioncontext.html">SessionContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about a user session.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-tasktimer.html">TaskTimer</a>
+          </td>
+          <td class="xmldoc">
+            Runs a task after a certain delay and log any error.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-telemetrycontextextensions.html">TelemetryContextExtensions</a>
+          </td>
+          <td class="xmldoc">
+            Extension methods for TelemetryContext.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-telemetrymodules.html">TelemetryModules</a>
+          </td>
+          <td class="xmldoc">
+            This API supports the AI Framework infrastructure and is not intended to be used directly from your code.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-telemetryprocessorchain.html">TelemetryProcessorChain</a>
+          </td>
+          <td class="xmldoc">
+            Represents the TelemetryProcessor chain. Clients should use TelemetryProcessorChainBuilder to construct this object.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-telemetryprocessorchainbuilder.html">TelemetryProcessorChainBuilder</a>
+          </td>
+          <td class="xmldoc">
+            Represents an object used to Build a TelemetryProcessorChain.
+            </br></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-usercontext.html">UserContext</a>
+          </td>
+          <td class="xmldoc">
+            Encapsulates information about a user using an application.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing" class="anchor" href="#Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing">Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="microsoft-applicationinsights-extensibility-implementation-tracing-extensions.html">Extensions</a>
+          </td>
+          <td class="xmldoc">
+            Provides a set of extension methods for tracing.
+            </br></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+    <h2><a href="#Overview"><img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/back_to_top.png" alt="Back to top" /></a> <a name="Yaaf.ApplicationInsights" class="anchor" href="#Yaaf.ApplicationInsights">Yaaf.ApplicationInsights Namespace</a></h2>
+    <div>
+        <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="yaaf-applicationinsights-applicationinsightstracelistener.html">ApplicationInsightsTraceListener</a>
+          </td>
+          <td class="xmldoc">
+ Listener that routes all tracing and debugging output to ApplicationInsights logging framework.
+ The messages will be uploaded to the Application Insights cloud service.
+ </br></td>
+        </tr>
+    </tbody>
+  </table>
+  <table class="table table-bordered module-list">
+    <thead>
+      <tr><td>Module</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="module-name">
+            <a href="yaaf-applicationinsights-helper.html">Helper</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+        </div>
+        <div class="span3">
+          <a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">
+            <img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+          </a>
+
+          <ul class="nav nav-list" id="menu">
+
+            <li class="nav-header">Yaaf.ApplicationInsights</li>
+
+            <li class="divider"></li>
+            <li><a href="https://www.nuget.org/packages/Yaaf.ApplicationInsights/">Get Yaaf.ApplicationInsights package via NuGet</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights">Source Code</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues">Open bugs and feature requests</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues/new">Report Issue or Request Feature</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/blob/develop/LICENSE.md">License (Apache2)</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/Contributing.html">Contributing</a></li>
+            
+            <li class="nav-header">Documentation</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Quick Intro</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/ReleaseNotes.html">Release Notes</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/DevelopReadme.html">Development Intro</a></li>
+
+            <li class="nav-header">Reference</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/references/index.html">API Reference</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+      <a href="https://github.com/matthid/Yaaf.ApplicationInsights"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    </body>
+  </html>

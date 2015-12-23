@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TelemetryClient - Yaaf.ApplicationInsights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Matthias Dittrich">
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.css" />
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/tips.js"></script>
+    <script type="text/javascript" src="https://matthid.github.io/Yaaf.ApplicationInsights/content/prism.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://tpetricek.github.io/FSharp.Formatting/"><img height="16" width="16" src="https://matthid.github.io/Yaaf.AdvancedBuilding/content/img/FSharp.Formatting.png" /> F# Formatting</a></li>
+        </ul>
+        <h3 class="muted"><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Yaaf.ApplicationInsights</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>TelemetryClient </h1>
+<div class="xmldoc">
+    Defined in Microsoft.ApplicationInsights.dll.
+</div>
+<div class="xmldoc">
+
+            Send events, metrics and other telemetry to the Application Insights service.
+            </br></div>
+  <h3>Constructors</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Constructor</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
+            new()
+          </code>
+          <div class="tip" id="6">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Initializes a new instance of the <a href="microsoft-applicationinsights-telemetryclient.html">TelemetryClient</a> class. Send telemetry with the active configuration, usually loaded from ApplicationInsights.config.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+            new(configuration)
+          </code>
+          <div class="tip" id="7">
+            <strong>Signature:</strong> configuration:TelemetryConfiguration -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Initializes a new instance of the <a href="microsoft-applicationinsights-telemetryclient.html">TelemetryClient</a> class. Send telemetry with the specified .
+            </br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Instance members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Instance member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+            Context()
+          </code>
+          <div class="tip" id="8">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets the current context that will be used to augment telemetry you send.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+            Flush()
+          </code>
+          <div class="tip" id="9">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Flushes the in-memory buffer.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
+            Initialize(telemetry)
+          </code>
+          <div class="tip" id="10">
+            <strong>Signature:</strong> telemetry:ITelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            This method is an internal part of Application Insights infrastructure. Do not call.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
+            InstrumentationKey()
+          </code>
+          <div class="tip" id="11">
+            <strong>Signature:</strong> unit -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Gets or sets the default instrumentation key for all <a href="microsoft-applicationinsights-channel-itelemetry.html">ITelemetry</a> objects logged in this <a href="microsoft-applicationinsights-telemetryclient.html">TelemetryClient</a>.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+            IsEnabled()
+          </code>
+          <div class="tip" id="12">
+            <strong>Signature:</strong> unit -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Check to determine if the tracking is enabled.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+            Track(telemetry)
+          </code>
+          <div class="tip" id="13">
+            <strong>Signature:</strong> telemetry:ITelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            This method is an internal part of Application Insights infrastructure. Do not call.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+            TrackDependency(...)
+          </code>
+          <div class="tip" id="14">
+            <strong>Signature:</strong> (dependencyName:string * commandName:string * startTime:DateTimeOffset * duration:TimeSpan * success:bool) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about external dependency call in the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
+            TrackDependency(telemetry)
+          </code>
+          <div class="tip" id="15">
+            <strong>Signature:</strong> telemetry:DependencyTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about external dependency call in the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            TrackEvent(...)
+          </code>
+          <div class="tip" id="16">
+            <strong>Signature:</strong> (eventName:string * properties:IDictionary&lt;string,string&gt; * metrics:IDictionary&lt;string,float&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send an <a href="microsoft-applicationinsights-datacontracts-eventtelemetry.html">EventTelemetry</a> for display in Diagnostic Search and aggregation in Metrics Explorer.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+            TrackEvent(telemetry)
+          </code>
+          <div class="tip" id="17">
+            <strong>Signature:</strong> telemetry:EventTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send an <a href="microsoft-applicationinsights-datacontracts-eventtelemetry.html">EventTelemetry</a> for display in Diagnostic Search and aggregation in Metrics Explorer.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+            TrackException(...)
+          </code>
+          <div class="tip" id="18">
+            <strong>Signature:</strong> (exception:exn * properties:IDictionary&lt;string,string&gt; * metrics:IDictionary&lt;string,float&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send an <a href="microsoft-applicationinsights-datacontracts-exceptiontelemetry.html">ExceptionTelemetry</a> for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+            TrackException(telemetry)
+          </code>
+          <div class="tip" id="19">
+            <strong>Signature:</strong> telemetry:ExceptionTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send an <a href="microsoft-applicationinsights-datacontracts-exceptiontelemetry.html">ExceptionTelemetry</a> for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+            TrackMetric(name, value, properties)
+          </code>
+          <div class="tip" id="20">
+            <strong>Signature:</strong> (name:string * value:float * properties:IDictionary&lt;string,string&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a <a href="microsoft-applicationinsights-datacontracts-metrictelemetry.html">MetricTelemetry</a> for aggregation in Metric Explorer.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+            TrackMetric(telemetry)
+          </code>
+          <div class="tip" id="21">
+            <strong>Signature:</strong> telemetry:MetricTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a <a href="microsoft-applicationinsights-datacontracts-metrictelemetry.html">MetricTelemetry</a> for aggregation in Metric Explorer.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+            TrackPageView(name)
+          </code>
+          <div class="tip" id="22">
+            <strong>Signature:</strong> name:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about the page viewed in the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+            TrackPageView(telemetry)
+          </code>
+          <div class="tip" id="23">
+            <strong>Signature:</strong> telemetry:PageViewTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about the page viewed in the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+            TrackRequest(...)
+          </code>
+          <div class="tip" id="24">
+            <strong>Signature:</strong> (name:string * startTime:DateTimeOffset * duration:TimeSpan * responseCode:string * success:bool) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about a request handled by the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+            TrackRequest(request)
+          </code>
+          <div class="tip" id="25">
+            <strong>Signature:</strong> request:RequestTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send information about a request handled by the application.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+            TrackTrace(message)
+          </code>
+          <div class="tip" id="26">
+            <strong>Signature:</strong> message:string -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a trace message for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+            TrackTrace(message, severityLevel)
+          </code>
+          <div class="tip" id="27">
+            <strong>Signature:</strong> (message:string * severityLevel:SeverityLevel) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a trace message for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+            TrackTrace(message, properties)
+          </code>
+          <div class="tip" id="28">
+            <strong>Signature:</strong> (message:string * properties:IDictionary&lt;string,string&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a trace message for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+            TrackTrace(...)
+          </code>
+          <div class="tip" id="29">
+            <strong>Signature:</strong> (message:string * severityLevel:SeverityLevel * properties:IDictionary&lt;string,string&gt;) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a trace message for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
+            TrackTrace(telemetry)
+          </code>
+          <div class="tip" id="30">
+            <strong>Signature:</strong> telemetry:TraceTelemetry -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+          
+            Send a trace message for display in Diagnostic Search.
+            </br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">
+            <img src="https://matthid.github.io/Yaaf.ApplicationInsights/content/img/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+          </a>
+
+          <ul class="nav nav-list" id="menu">
+
+            <li class="nav-header">Yaaf.ApplicationInsights</li>
+
+            <li class="divider"></li>
+            <li><a href="https://www.nuget.org/packages/Yaaf.ApplicationInsights/">Get Yaaf.ApplicationInsights package via NuGet</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights">Source Code</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues">Open bugs and feature requests</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/issues/new">Report Issue or Request Feature</a></li>
+            <li><a href="https://github.com/matthid/Yaaf.ApplicationInsights/blob/develop/LICENSE.md">License (Apache2)</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/Contributing.html">Contributing</a></li>
+            
+            <li class="nav-header">Documentation</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/index.html">Quick Intro</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/ReleaseNotes.html">Release Notes</a></li>
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/DevelopReadme.html">Development Intro</a></li>
+
+            <li class="nav-header">Reference</li>
+              
+            <li><a href="https://matthid.github.io/Yaaf.ApplicationInsights/references/index.html">API Reference</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+      <a href="https://github.com/matthid/Yaaf.ApplicationInsights"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    </body>
+  </html>
