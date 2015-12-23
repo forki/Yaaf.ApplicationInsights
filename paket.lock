@@ -1,5 +1,5 @@
 NUGET
-  remote: https://nuget.org/api/v2
+  remote: https://www.nuget.org/api/v2
   specs:
     FAKE (4.9.3)
     FSharp.Compiler.Service (1.4.0.6)
@@ -23,6 +23,7 @@ NUGET
       FAKE (4.9.3)
       FSharp.Formatting (2.12.0)
       FSharpVSPowerTools.Core (2.1.0)
+    Yaaf.Logging (2.0.0)
 GITHUB
   remote: Microsoft/ApplicationInsights-dotnet
   specs:

@@ -26,3 +26,7 @@ Besides some removed functionality this are the unmodified bits (in fact we copy
 
 > Note some files like `CoreEventSource.cs` are included and modified slightly (see git history for details)
 
+The dependency to `Yaaf.Logging` is required because we replaced the Event-Logging feature with logging to regular TraceSource
+with the "Microsoft.applicationinsights" source name. Additionally `Yaaf.Logging` allows us to compile for portable profiles
+and lets you choose the concrete implementation in the main application. 
+(Because `System.Diagnostics` is not available on most portable profiles but it is available on most platforms you can most likely use it).

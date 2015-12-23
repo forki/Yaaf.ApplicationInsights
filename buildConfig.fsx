@@ -55,20 +55,23 @@ let buildConfig =
                 [ { FrameworkVersion = "net40"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                         "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
                         "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
-                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist"
                       ] }
                   { FrameworkVersion = "net45"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                       ] }
                   { FrameworkVersion = "portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1"
                     Dependencies = 
                       [ "FSharp.Core", GetPackageVersion "packages" "FSharp.Core"
+                        "Yaaf.Logging", GetPackageVersion "packages" "Yaaf.Logging"
                         "Microsoft.Bcl", GetPackageVersion "packages" "Microsoft.Bcl"
                         "Microsoft.Bcl.Async", GetPackageVersion "packages" "Microsoft.Bcl.Async"
-                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist" 
+                        "Microsoft.Diagnostics.Tracing.EventSource.Redist", GetPackageVersion "packages" "Microsoft.Diagnostics.Tracing.EventSource.Redist"
                       ] } ]
           }) ]
     UseNuget = true
