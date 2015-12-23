@@ -24,3 +24,5 @@ Because I also needed "profile111" support this package bundles `Microsoft.Appli
 I changed some things such that it is `compilable` on a mono system and removed an incompatible module (using the `EventListener` class).
 Besides some removed functionality this are the unmodified bits (in fact we copy the original files in the build process via `paket`).
 
+> Note some files like `CoreEventSource.cs` are included and modified slightly (see git history for details)
+

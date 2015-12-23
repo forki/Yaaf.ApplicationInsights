@@ -99,7 +99,6 @@ File:StackFrame.cs
 File:Tags.cs
 File:PlatformSingleton.cs
 File:ApplicationNameProvider.cs
-File:CoreEventSource.cs
 File:DiagnoisticsEventCounters.cs
 File:DiagnoisticsEventThrottling.cs
 File:DiagnoisticsEventThrottlingDefaults.cs

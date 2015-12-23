@@ -478,10 +478,6 @@
       <Paket>True</Paket>
       <Link>paket-files/ApplicationNameProvider.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\CoreEventSource.cs">
-      <Paket>True</Paket>
-      <Link>paket-files/CoreEventSource.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\paket-files\Microsoft\ApplicationInsights-dotnet\src\Core\Managed\Shared\Extensibility\Implementation\Tracing\DiagnoisticsEventCounters.cs">
       <Paket>True</Paket>
       <Link>paket-files/DiagnoisticsEventCounters.cs</Link>
@@ -564,6 +560,7 @@
     <Compile Include="CC\CallContextBasedOperationHolder.cs" />
     <Compile Include="CC\CallContextHelpers.cs" />
     <Compile Include="CC\OperationContextForCallContext.cs" />
+    <Compile Include="CoreEventSource.cs" />
     <Compile Include="OperationCorrelationTelemetryInitializer.cs" />
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="paket.references" />

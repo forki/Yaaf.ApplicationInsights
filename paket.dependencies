@@ -112,7 +112,7 @@ github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibilit
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/External/Tags.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Platform/PlatformSingleton.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/ApplicationNameProvider.cs
-github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs
+// github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventCounters.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottling.cs
 github Microsoft/ApplicationInsights-dotnet src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingDefaults.cs

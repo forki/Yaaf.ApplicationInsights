@@ -107,7 +107,6 @@ GITHUB
     src/Core/Managed/Shared/Extensibility/Implementation/TelemetryProcessorChain.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/TelemetryProcessorChainBuilder.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/ApplicationNameProvider.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
-    src/Core/Managed/Shared/Extensibility/Implementation/Tracing/CoreEventSource.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventCounters.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottling.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
     src/Core/Managed/Shared/Extensibility/Implementation/Tracing/DiagnoisticsEventThrottlingDefaults.cs (0cae65d4a88dd1ff6a4f60a2c9648602846865b9)
