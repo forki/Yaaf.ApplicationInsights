@@ -36,8 +36,8 @@ let buildConfig =
  { BuildConfiguration.Defaults with
     ProjectName = "Yaaf.ApplicationInsights"
     CopyrightNotice = "Yaaf.ApplicationInsights Copyright © Matthias Dittrich 2015-2016"
-    ProjectSummary = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging)."
-    ProjectDescription = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging)."
+    ProjectSummary = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging and usable with profile111)."
+    ProjectDescription = "Yaaf.ApplicationInsights is a simple helper library for using Microsofts ApplicationInsights with F# (designed for System.Diagnostic.TraceSource / Yaaf.Logging and usable with profile111)."
     ProjectAuthors = ["Matthias Dittrich"]
     NugetTags =  "logging tracesource applicationsinsights C# F# dotnet .net"
     PageAuthor = "Matthias Dittrich"
