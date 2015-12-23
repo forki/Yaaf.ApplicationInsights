@@ -9,15 +9,12 @@ NUGET
       FSharpVSPowerTools.Core (2.1.0)
     FSharpVSPowerTools.Core (2.1.0)
       FSharp.Compiler.Service (>= 1.4.0.6)
-    Microsoft.ApplicationInsights (1.2.3)
-      Microsoft.Bcl.Async (>= 1.0.168) - framework: net40, wpv8.0
-      Microsoft.Diagnostics.Tracing.EventSource.Redist (>= 1.1.24) - framework: net40
-    Microsoft.Bcl (1.1.10)
+    Microsoft.Bcl (1.1.10) - framework: net35, net40, dnx451, dnxcore50, monoandroid, monotouch, monomac, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, xamarinios, xamarinmac, winv4.5, winv4.5.1
       Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Bcl.Async (1.0.168)
+    Microsoft.Bcl.Async (1.0.168) - framework: net35, net40, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, monotouch, monoandroid, monomac, xamarinios, xamarinmac, winv4.5, winv4.5.1, dnx451, dnxcore50
       Microsoft.Bcl (>= 1.1.8)
-    Microsoft.Bcl.Build (1.0.21) - import_targets: false
-    Microsoft.Diagnostics.Tracing.EventSource.Redist (1.1.28)
+    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: net35, net40, dnx451, dnxcore50, monoandroid, monotouch, monomac, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, xamarinios, xamarinmac, winv4.5, winv4.5.1
+    Microsoft.Diagnostics.Tracing.EventSource.Redist (1.1.28) - framework: net35, net40, portable-net45+netcore45+wpa81+monoandroid1+monotouch1, monotouch, monoandroid, monomac, xamarinios, xamarinmac, winv4.5, winv4.5.1, dnx451, dnxcore50
     NuGet.CommandLine (3.3.0)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)

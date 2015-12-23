@@ -9,10 +9,9 @@ nuget NUnit.Runners ~> 2
 nuget NUnit ~> 2
 nuget Unquote
 nuget FSharp.Core ~> 4.0.0
-nuget Microsoft.ApplicationInsights
-nuget Microsoft.Bcl.Async
-nuget Microsoft.Bcl
-nuget Microsoft.Diagnostics.Tracing.EventSource.Redist
+nuget Microsoft.Bcl.Async framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
+nuget Microsoft.Bcl framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
+nuget Microsoft.Diagnostics.Tracing.EventSource.Redist framework: net35,net40,portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1,monotouch,monoandroid,monomac,xamarinios,xamarinmac,netcore45,netcore46,dnx451,dnxcore50
 
 // For Profile 111 (see CreateInsightsDependencies.fsx)
 

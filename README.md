@@ -18,4 +18,9 @@
 
 ## Overview
 
-This is a very simple abstraction layer on top of a logging framework.
+
+This is a very thin layer on top of https://github.com/Microsoft/ApplicationInsights-dotnet/ for F# and mono compatibility.
+Because I also needed "profile111" support this package bundles `Microsoft.ApplicationInsights` and has therefore no dependency to it.
+I changed some things such that it is `compilable` on a mono system and removed an incompatible module (using the `EventListener` class).
+Besides some removed functionality this are the unmodified bits (in fact we copy the original files in the build process via `paket`).
+
