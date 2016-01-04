@@ -104,4 +104,8 @@ type ApplicationInsightsTraceListener(key) as x =
 
   member x.Client = client
 
+  override x.Dispose(isDisposing) =
+    client.Flush()
+
+
 #endif
